@@ -24,7 +24,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="{% url 'blog-home' %}">My Blog</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Post Now</a>
+            <a class="nav-link" href="{% url 'create_entry' %}">Post Now</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
@@ -59,13 +59,17 @@
 
         <!-- Search Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Search</h5>
+          <h5 class="card-header">Logged in Information</h5>
           <div class="card-body">
             <div class="input-group">
+              <li>
+                <p><Strong>Username:</Strong> {{user.username}}</p>
+                <li>
+                  <p><Strong>Email:</Strong> {{user.email}}</p>
+                </li>
+              </li>
               <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
+
             </div>
           </div>
         </div>
