@@ -7,13 +7,13 @@
   <h1 class="my-4">Page Heading
     <small>Secondary Text</small>
   </h1>
-
+  <a href="{% url 'blog-home' %}">Back to home</a>
   <!-- Blog Post -->
-  <div class="card mb-4">
+  <div class="card mb-8">
     <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
     <div class="card-body">
       <h3 class="card-title">{{ object.entry_title }}</h3>
-      <p class="card-text">{{ object.entry_text }}</p>
+      <p class="card-text">{{ object.entry_text|linebreaks }}</p>
     </div>
     <div class="card-footer text-muted">
       Posted on {{ object.entry_date }} by
